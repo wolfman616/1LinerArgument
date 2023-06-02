@@ -40,7 +40,7 @@ q:= " a_args[3] "
 run,% qq.= q
 exitapp,
 
-Pth(Path="""")) {
+Pth(Path) {
  SplitPath,Path,,D,Ext,NameNoExt,Drive
 	return,y:= ({""Dir""	: D
 	,			 ""Ext""	: Ext
@@ -59,14 +59,3 @@ loop,100
 if(!dllhwnd)
 	msgbox,% "fail"
 exitapp,
-
-Pth(Path="") {
- SplitPath,Path,,D,Ext,NameNoExt,Drive
-	return,y:= ({"Dir"	: D
-	,			 "Ext"	: Ext
-	,			 "Drv"	: Drive
-	,			 "FN"	: NameNoExt
-	,			 "Name"	: NameNoExt
-	,		"NameNoExt"	: NameNoExt
-	,			 "Path"	: Path })
-}
